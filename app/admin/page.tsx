@@ -29,7 +29,7 @@ export default function AdminPage() {
           E<span style={{ color: '#C9A84C' }}>-</span>Barber <span style={{ fontSize: 12, color: '#777', fontFamily: 'Inter, sans-serif' }}>Admin</span>
         </div>
         {[
-          { id: 'barbers', label: '✂️ Barbiers', count: barbers.length },
+          { id: 'barbers', label: '✂️ Coiffeurs', count: barbers.length },
           { id: 'clients', label: '👤 Clients', count: clients.length },
           { id: 'bookings', label: '📅 Réservations', count: 0 },
         ].map(item => (
@@ -46,7 +46,7 @@ export default function AdminPage() {
       <main style={{ marginLeft: 240, flex: 1, padding: 32 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16, marginBottom: 32 }}>
           {[
-            { label: 'Barbiers total', val: barbers.length, color: '#C9A84C' },
+            { label: 'Coiffeurs total', val: barbers.length, color: '#C9A84C' },
             { label: 'En attente', val: barbers.filter(b => !b.verified).length, color: '#F59E0B' },
             { label: 'Clients inscrits', val: clients.length, color: '#22C55E' },
             { label: 'Réservations', val: 0, color: '#3B82F6' },
@@ -60,7 +60,7 @@ export default function AdminPage() {
 
         {tab === 'barbers' && (
           <div>
-            <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 22, fontWeight: 800, marginBottom: 20 }}>Gestion des barbiers</h2>
+            <h2 style={{ fontFamily: 'Syne, sans-serif', fontSize: 22, fontWeight: 800, marginBottom: 20 }}>Gestion des coiffeurs</h2>
             {barbers.filter(b => !b.verified).length > 0 && (
               <div style={{ marginBottom: 32 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#F59E0B', letterSpacing: 0.8, textTransform: 'uppercase' as const, marginBottom: 12 }}>

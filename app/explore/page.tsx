@@ -36,8 +36,8 @@ export default function ExplorePage() {
       </nav>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 24px' }}>
         <div style={{ marginBottom: 32 }}>
-          <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Trouver un barbier</h1>
-          <p style={{ color: '#777', fontSize: 15 }}>Les meilleurs barbiers disponibles près de chez vous</p>
+          <h1 style={{ fontFamily: 'Syne, sans-serif', fontSize: 32, fontWeight: 800, marginBottom: 8 }}>Trouver un coiffeur</h1>
+          <p style={{ color: '#777', fontSize: 15 }}>Les meilleurs coiffeurs disponibles près de chez vous</p>
         </div>
         <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' as const }}>
           <div style={{ position: 'relative' as const, flex: 1, minWidth: 200 }}>
@@ -56,7 +56,7 @@ export default function ExplorePage() {
             </button>
           ))}
         </div>
-        <p style={{ color: '#777', fontSize: 14, marginBottom: 20 }}>{filtered.length} barbier{filtered.length > 1 ? 's' : ''} trouvé{filtered.length > 1 ? 's' : ''}</p>
+        <p style={{ color: '#777', fontSize: 14, marginBottom: 20 }}>{filtered.length} coiffeur{filtered.length > 1 ? 's' : ''} trouvé{filtered.length > 1 ? 's' : ''}</p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 16 }}>
           {filtered.map(b => (
             <Link key={b.id} href={`/barbers/${b.id}`} style={{ textDecoration: 'none' }}>

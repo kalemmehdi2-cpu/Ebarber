@@ -127,7 +127,7 @@ export default function HomePage() {
       {/* LOCATION BANNER */}
       {showLocBanner && (
         <div className="loc-banner" style={{
-          position: 'fixed', top: 72, left: 16, right: 16,
+          position: 'fixed',top: 72, left: 0, right: 0, margin: '0 16px',
           zIndex: 300, background: '#fff', borderRadius: 18,
           padding: '14px 16px',
           boxShadow: '0 8px 40px rgba(10,15,44,0.18)',

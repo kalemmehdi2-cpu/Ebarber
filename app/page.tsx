@@ -94,14 +94,7 @@ export default function HomePage() {
           .nav-mobile{display:flex !important;}
           .hero-grid{display:block !important;padding:80px 20px 60px !important;}
           .hero-text{position:relative;z-index:2;text-align:center;}
-          .hero-cards-col{
-            position:absolute !important;
-            top:0;left:0;right:0;bottom:0;
-            width:100%;height:100%;
-            z-index:1;
-            opacity:0.12;
-            pointer-events:none;
-          }
+          .hero-cards-col{position:absolute !important;top:0;left:0;right:0;bottom:0;width:100%;height:100%;z-index:1;opacity:0.12;pointer-events:none;}
           .hero-notif{display:none !important;}
           .hero-btns{justify-content:center !important;flex-direction:column;align-items:center;}
           .hero-proof{justify-content:center !important;}
@@ -127,12 +120,10 @@ export default function HomePage() {
       {/* LOCATION BANNER */}
       {showLocBanner && (
         <div className="loc-banner" style={{
-          position: 'fixed',top: 72, left: 0, right: 0, margin: '0 16px',
-          zIndex: 300, background: '#fff', borderRadius: 18,
-          padding: '14px 16px',
-          boxShadow: '0 8px 40px rgba(10,15,44,0.18)',
-          border: '1px solid #eef0f8',
-          display: 'flex', alignItems: 'center', gap: 12
+          position: 'fixed', top: 72, left: 0, right: 0, margin: '0 16px', zIndex: 300,
+          background: '#fff', borderRadius: 16, padding: '14px 16px',
+          boxShadow: '0 8px 40px rgba(10,15,44,0.2)', border: '1px solid #eef0f8',
+          display: 'flex', alignItems: 'center', gap: 12,
         }}>
           <div style={{ width: 40, height: 40, borderRadius: 20, background: 'linear-gradient(135deg,#0A0F2C,#1a2560)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>📍</div>
           <div style={{ flex: 1, minWidth: 0 }}>
@@ -140,8 +131,8 @@ export default function HomePage() {
             <div style={{ fontSize: 11, color: '#8892B0', marginTop: 2 }}>Trouver les coiffeurs près de vous</div>
           </div>
           <div style={{ display: 'flex', gap: 6, flexShrink: 0 }}>
-            <button onClick={requestLocation} style={{ background: '#0A0F2C', color: '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>Autoriser</button>
-            <button onClick={() => setShowLocBanner(false)} style={{ background: '#F8F9FF', color: '#8892B0', border: 'none', borderRadius: 8, padding: '8px 10px', fontSize: 12, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>✕</button>
+            <button onClick={requestLocation} style={{ background: '#0A0F2C', color: '#fff', border: 'none', borderRadius: 8, padding: '8px 14px', fontSize: 12, fontWeight: 700, cursor: 'pointer', fontFamily: 'Inter,sans-serif', whiteSpace: 'nowrap' }}>Autoriser</button>
+            <button onClick={() => setShowLocBanner(false)} style={{ background: '#F1F3FF', color: '#8892B0', border: 'none', borderRadius: 8, padding: '8px 10px', fontSize: 13, cursor: 'pointer', fontFamily: 'Inter,sans-serif' }}>✕</button>
           </div>
         </div>
       )}
@@ -153,13 +144,11 @@ export default function HomePage() {
             <span style={{ fontSize: 20 }}>💈</span>
             <span style={{ fontFamily: 'Syne,sans-serif', fontSize: 20, fontWeight: 800, color: scrollY > 20 ? '#0A0F2C' : '#fff' }}>E-Barber</span>
           </div>
-          {/* Desktop nav */}
           <div className="nav-desktop" style={{ gap: 8, alignItems: 'center' }}>
             <Link href="/auth/login" style={{ color: scrollY > 20 ? '#0A0F2C' : '#fff', textDecoration: 'none', fontSize: 14, fontWeight: 500, padding: '10px 18px' }}>Connexion</Link>
             <Link href="/auth/register" className="btn-p" style={{ background: '#0A0F2C', color: '#fff', padding: '11px 22px', borderRadius: 12, textDecoration: 'none', fontSize: 14, fontWeight: 700 }}>S'inscrire →</Link>
           </div>
-          {/* Mobile nav */}
-          <div className="nav-mobile" style={{ gap: 8, alignItems: 'center' }}>
+          <div className="nav-mobile" style={{ display: 'none', gap: 8, alignItems: 'center' }}>
             <Link href="/auth/login" style={{ color: scrollY > 20 ? '#0A0F2C' : '#fff', textDecoration: 'none', fontSize: 13, fontWeight: 500 }}>Connexion</Link>
             <Link href="/auth/register" style={{ background: scrollY > 20 ? '#0A0F2C' : '#fff', color: scrollY > 20 ? '#fff' : '#0A0F2C', padding: '8px 16px', borderRadius: 10, textDecoration: 'none', fontSize: 13, fontWeight: 700 }}>S'inscrire</Link>
           </div>
@@ -169,10 +158,7 @@ export default function HomePage() {
       {/* HERO */}
       <section style={{ minHeight: '100vh', background: 'linear-gradient(160deg,#0A0F2C 0%,#1a2560 50%,#0d1b4e 100%)', display: 'flex', alignItems: 'center', paddingTop: 64, position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '10%', right: '5%', width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle,rgba(59,91,219,0.3) 0%,transparent 70%)', pointerEvents: 'none' }} />
-
         <div className="hero-grid" style={{ maxWidth: 1100, margin: '0 auto', padding: '80px 40px', width: '100%', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 60, alignItems: 'center' }}>
-
-          {/* TEXT */}
           <div className="hero-text">
             <div className="fu1" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(255,255,255,0.1)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 20, padding: '8px 16px', marginBottom: 24 }}>
               <span style={{ width: 8, height: 8, borderRadius: 4, background: '#4ade80', display: 'inline-block', animation: 'pulse 2s infinite' }} />
@@ -205,7 +191,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* CARDS */}
           <div className="hero-cards-col" style={{ position: 'relative', height: 480, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <div style={{ background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: 24, padding: 22, width: 270, position: 'absolute', zIndex: 3 }}>
               <div style={{ display: 'flex', gap: 12, alignItems: 'center', marginBottom: 14 }}>
@@ -340,6 +325,9 @@ export default function HomePage() {
             <h2 className="cta-title section-title" style={{ fontFamily: 'Syne,sans-serif', fontSize: 36, fontWeight: 800, color: '#fff', marginBottom: 18 }}>Développez votre clientèle</h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: 16, lineHeight: 1.7, marginBottom: 32, maxWidth: 440, margin: '0 auto 32px' }}>
               Rejoignez +500 coiffeurs sur E-Barber. Gérez vos horaires, prestations et revenus.
+            </p>
+            <p style={{ fontFamily: 'Syne,sans-serif', fontSize: 28, fontWeight: 800, color: '#C9A84C', marginBottom: 24 }}>
+              Ton ciseau, ta liberté.
             </p>
             <Link href="/auth/register?role=coiffeur" className="btn-p" style={{ display: 'inline-flex', alignItems: 'center', gap: 10, background: '#fff', color: '#0A0F2C', padding: '15px 32px', borderRadius: 14, textDecoration: 'none', fontSize: 15, fontWeight: 800 }}>
               ✂️ Créer mon profil coiffeur →
